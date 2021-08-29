@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Button, ButtonGroup } from "@chakra-ui/react"
+import { Button, ButtonGroup, useColorMode } from "@chakra-ui/react"
+import TabSection from '../src/components/TabSection'
+
 // import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <div>
       <Head>
@@ -13,8 +17,75 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Button onClick={toggleColorMode}>
+          Toggle {colorMode === "light" ? "Dark" : "Light"}
+        </Button>
         <Button variant="primary">Button</Button>
         <Button variant="secondary">Button</Button>
+        <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { 
+              label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
+          <TabSection 
+          tabs={[
+            { label: 'Button 1', content: <div>testing 123</div> },
+            { label: 'Button 2', content: 'This is content for Button 2' },
+            { label: 'Button 3', content: 'This is content for Button 3' }
+          ]}
+          />
       </main>
 
     </div>

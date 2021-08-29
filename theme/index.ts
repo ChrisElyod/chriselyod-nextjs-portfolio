@@ -1,4 +1,5 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, ThemeConfig } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools'
 
 //COLORS FROM https://mycolor.space/?hex=%23365F85&sub=1
 
@@ -26,5 +27,19 @@ const button = {
   }
 }
 
-const theme = extendTheme({ ...colors, ...button })
+const styles = {
+  global: (props) => ({
+    "html, body": {
+      color: mode('gray.800', 'whiteAlpha.900')(props),
+      bg: mode('gray.500', 'red.100')(props),
+    }
+  })
+}
+
+const config: ThemeConfig = {
+  initialColorMode: 'dark',
+  cssVarPrefix: 'cdd',
+}
+
+const theme = extendTheme({ ...config, ...styles, ...colors, ...button })
 export { theme };

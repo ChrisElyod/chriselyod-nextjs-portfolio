@@ -28,6 +28,7 @@ const Home: NextPage = () => {
               flexDirection="column"
               alignItems="center"
               textAlign="center"
+              maxW="75vw"
             >
               Hey
               <Text fontSize="2xl" fontWeight="semibold" py="10">

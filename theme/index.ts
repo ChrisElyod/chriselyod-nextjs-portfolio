@@ -4,10 +4,13 @@ import { mode } from '@chakra-ui/theme-tools'
 //COLORS FROM https://mycolor.space/?hex=%23365F85&sub=1
 
 const colors = {
-  primary: "#365f85",
+  primary: "#0083a5",
   secondary: "#9170a7",
   warning: "#944344",
-  highlight: "#e19e20"
+  highlight: "#e19e20",
+  brand: {
+    dark: '#365f85',
+  },
 };
 
 const button = {
@@ -28,10 +31,10 @@ const button = {
 }
 
 const styles = {
-  global: (props) => ({
+  global: (props: any) => ({
     "html, body": {
       color: mode('gray.800', 'whiteAlpha.900')(props),
-      bg: mode('gray.500', 'red.100')(props),
+      bg: mode('gray.500', '#365f85')(props),
     }
   })
 }

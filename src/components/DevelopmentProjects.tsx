@@ -82,7 +82,7 @@ const DevelopmentProjects: FC = () => {
   ];
   return (
     <Box minw="100vw">
-      <Container py="20" minW="60vw" bg="brand.dark">
+      <Container py="20" minW="75vw" bg="brand.dark">
         <Text fontSize="3xl" mb="4">Personal Projects</Text>
         <TabSection
           tabs={personalProjects.map(i => generatePersonalProjects(i))}

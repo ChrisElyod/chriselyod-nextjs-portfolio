@@ -60,7 +60,7 @@ const WorkExperience: FC = () => {
     }
   ];
   return (
-    <Container py="20" minW="60vw">
+    <Container py="20" minW="75vw">
       <Text fontSize="3xl" mb="4">Experience</Text>
       <TabSection
         tabs={workExperience.map(i => generateExperienceList(i))}

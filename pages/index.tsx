@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           <Box top={0} position="absolute" width="100%" height="100%" display="flex" justifyContent="center" alignItems="center" background="rgba(0, 0, 0, 0.5)">
             <Text
               color="whiteAlpha.900"
-              fontSize="2xl"
+              fontSize={{ base: 'md', xl: "2xl" }}
               display="flex"
               flexDirection="column"
               alignItems="center"
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
               maxW="75vw"
             >
               Hey
-              <Text fontSize="2xl" fontWeight="semibold" py="10">
+              <Text fontSize="2xl" fontWeight="semibold" py={{ base: "4", xl: "10"}}>
                 I&apos;m Chris Doyle
               </Text>
               A Software Developer specializing in ReactJS development with a growing passion for UI/UX Design

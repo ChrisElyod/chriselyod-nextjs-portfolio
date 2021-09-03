@@ -16,14 +16,14 @@ const Header: FC = () => {
         w="100vw"
         bg='transparent'
         boxShadow={scrollHeight > 0 ? "xl" : ''}
-        px={{ sm: '8', md: '16', lg: '24' }}
+        px={{ sm: '20', md: '28', lg: '34', xl: '40' }}
         transition="750ms"
         display="flex"
         flexDirection="row"
         alignItems="center"
       >
-        <Link href="/" ><Text fontWeight="bold" fontSize="2xl" cursor="pointer" color={scrollHeight === 0 ? 'white' : 'black'} passHref>CHRIS DOYLE</Text></Link>
-        <Link href="/contact"><Text ml="auto" color={scrollHeight === 0 ? 'white' : 'black'} cursor="pointer" fontSize="lg" passHref>Contact Me</Text></Link>
+        <Link href="/" ><Text fontWeight="bold" fontSize={{ base: 'xl', sm: 'sm', md: 'md', xl: '2xl' }} cursor="pointer" color={scrollHeight === 0 ? 'white' : 'black'} passHref>CHRIS DOYLE</Text></Link>
+        <Link href="/contact"><Text ml="auto" color={scrollHeight === 0 ? 'white' : 'black'} cursor="pointer" fontSize={{ base: 'lg', sm: 'sm', md: 'md' }} passHref>Contact Me</Text></Link>
       </Box>
     </nav>
   )

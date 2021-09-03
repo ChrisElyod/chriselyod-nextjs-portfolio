@@ -31,7 +31,7 @@ const Home: NextPage = () => {
             >
               Hey
               <Text fontSize="2xl" fontWeight="semibold" py="10">
-                I'm Chris Doyle
+                I&apos;m Chris Doyle
               </Text>
               A Software Developer specializing in ReactJS development with a growing passion for UI/UX Design
             </Text>

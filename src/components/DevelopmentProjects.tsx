@@ -46,7 +46,7 @@ const DevelopmentProjects: FC = () => {
             <Box pt="2">
               <Text fontSize="lg" as="u">Notes:</Text>
               <List>
-                {projectObj.notes.map(i => <ListItem><ListIcon as={MdChevronRight}/>{i}</ListItem>)}
+                {projectObj.notes.map((i, index) => <ListItem key={index}><ListIcon as={MdChevronRight}/>{i}</ListItem>)}
               </List> 
             </Box>
           : null}

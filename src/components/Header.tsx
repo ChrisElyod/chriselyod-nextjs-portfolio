@@ -22,8 +22,8 @@ const Header: FC = () => {
         flexDirection="row"
         alignItems="center"
       >
-        <Link href="/" ><Text fontWeight="bold" fontSize="2xl" cursor="pointer" color={scrollHeight === 0 ? 'white' : 'black'}>CHRIS DOYLE</Text></Link>
-        <Link href="/contact"><Text ml="auto" color={scrollHeight === 0 ? 'white' : 'black'} cursor="pointer" fontSize="lg">Contact Me</Text></Link>
+        <Link href="/" ><Text fontWeight="bold" fontSize="2xl" cursor="pointer" color={scrollHeight === 0 ? 'white' : 'black'} passHref>CHRIS DOYLE</Text></Link>
+        <Link href="/contact"><Text ml="auto" color={scrollHeight === 0 ? 'white' : 'black'} cursor="pointer" fontSize="lg" passHref>Contact Me</Text></Link>
       </Box>
     </nav>
   )

@@ -10,13 +10,14 @@ const Header: FC = () => {
     return () => window.removeEventListener('scroll', () => setScrollHeight(window.pageYOffset));
   }, [])
   return (
-    <nav style={{ position: 'fixed', top: 0, zIndex: 1000, background: scrollHeight === 0 ? 'transparent' : 'white' }}>
+    <nav style={{ position: 'fixed', zIndex: 1000, background: scrollHeight === 0 ? 'transparent' : 'white', width: '100%' }}>
       <Box
-        h={scrollHeight > 0 ? { sm: '20' } : { sm: '16' }}
-        w="100vw"
+        h={scrollHeight > 0 ? '20' : '16'}
+        w="container"
         bg='transparent'
         boxShadow={scrollHeight > 0 ? "xl" : ''}
-        px={{ sm: '20', md: '28', lg: '34', xl: '40' }}
+        mx="15"
+        px={{ base: '16', sm: '20', md: '28', lg: '34', xl: '40' }}
         transition="750ms"
         display="flex"
         flexDirection="row"

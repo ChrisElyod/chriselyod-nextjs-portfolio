@@ -14,7 +14,8 @@ const AboutMeCard:FC = () => {
       <Image src="/images/ChrisDoyle.png" width="400px" height="400px" />
       <Box
         maxW={{ base: '75vw', sm: '75vw', md: '65vw', lg: '30vw' }}
-        ml="20" color="whiteAlpha.900"
+        ml={{ sm: "0", md: "20" }}
+        color="whiteAlpha.900"
         mt="2"
         fontSize="lg"
         fontWeight="light"

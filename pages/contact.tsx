@@ -89,10 +89,31 @@ const Contact: FC = () => {
   })(FormFields);
 
   return (
-    <Box display="flex" justifyContent='center' h="max-content">
-      <Box display="flex" justifyContent='center' flexDirection="column" m="4" border="1px solid gray" minW="25vw" maxW="60vw" px='16' py="10" borderRadius="3xl">
-        <Text fontSize="2xl" fontWeight="semibold">Drop me a message!</Text>
-        <FormikForm />
+    <Box minHeight="100vh" display="flex" justifyContent="center" bg="#365f85">
+      <Box display="flex" justifyContent='space-evenly' flexDirection="column" alignItems="center" w="container.lg" >
+        <Box textAlign="center" display="flex" flexDirection="column" color="whiteAlpha.900">
+          <Text fontSize="2xl">Hey!</Text>
+          <Text fontSize="lg" pt="10" maxW="75vw">
+            Thanks for showing interest. Whether it's a suggestion of how to make the site better or otherwise I would be more than happy to hear from you!
+          </Text>
+        </Box>
+        <Box
+          display="flex"
+          justifyContent="center"
+          flexDirection="column"
+          m="4"
+          border="1px solid gray"
+          minW="25vw"
+          maxW="60vw"
+          px="16"
+          py="10"
+          borderRadius="3xl"
+          bg="gray.100"
+          boxShadow="dark-lg"
+        >
+          <Text fontSize="2xl" fontWeight="semibold">Drop me a message!</Text>
+          <FormikForm />
+        </Box>
       </Box>
     </Box>
   )

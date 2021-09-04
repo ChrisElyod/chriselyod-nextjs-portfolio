@@ -29,7 +29,7 @@ const Contact: FC = () => {
           </FormControl>
           <FormControl isInvalid={errors.email && touched.email} isRequired pt="4">
             <FormLabel>Email</FormLabel>
-            <Input id="email" placeholder="Email" type="text" onChange={handleChange}/>
+            <Input id="email" placeholder="Email" type="text" onChange={handleChange} />
             <FormErrorMessage>{errors.email}</FormErrorMessage>
           </FormControl>
           <FormControl isInvalid={errors.message && touched.message} isRequired pt="4">
@@ -90,10 +90,10 @@ const Contact: FC = () => {
 
   return (
     <Box minHeight="100vh" display="flex" justifyContent="center" bg="#365f85">
-      <Box display="flex" justifyContent='space-evenly' flexDirection="column" alignItems="center" w="container.lg" >
+      <Box display="flex" justifyContent='space-evenly' flexDirection="column" alignItems="center" w="container.lg" mt="10">
         <Box textAlign="center" display="flex" flexDirection="column" color="whiteAlpha.900">
-          <Text fontSize="2xl">Hey!</Text>
-          <Text fontSize="lg" pt="10" maxW="75vw">
+          <Text fontSize="2xl" display={{ base: 'none', md: 'initial' }}>Hey!</Text>
+          <Text fontSize={{ base: "md", md: "lg" }} pt="10" maxW="75vw">
             Thanks for showing interest. Whether it&apos;s a suggestion of how to make the site better or otherwise I would be more than happy to hear from you!
           </Text>
         </Box>
@@ -104,14 +104,14 @@ const Contact: FC = () => {
           m="4"
           border="1px solid gray"
           minW="25vw"
-          maxW="60vw"
-          px="16"
-          py="10"
+          maxW="75vw"
+          px={{ base: "10", md: "16" }}
+          py={{ base: "6", md: "10" }}
           borderRadius="3xl"
           bg="gray.100"
           boxShadow="dark-lg"
         >
-          <Text fontSize="2xl" fontWeight="semibold">Drop me a message!</Text>
+          <Text fontSize={{ base: "lg", md: "2xl"}} fontWeight="semibold">Drop me a message!</Text>
           <FormikForm />
         </Box>
       </Box>

@@ -37,7 +37,7 @@ const Home: NextPage = () => {
               </Text>
               <Text display={{ base: 'none', md: 'initial' }}>A Software Developer specializing in ReactJS development with a growing passion for UI/UX Design</Text>
             </Text>
-            <Text as="i" position="absolute" bottom="0" right="0" color="whiteAlpha.900" fontSize="xs">Image by Richard Kidger via <a href="https://unsplash.com/photos/V4S9FZmvYvM" target="_blank" rel="noreferrer">https://unsplash.com/photos/V4S9FZmvYvM</a> Copyright Free</Text>
+            <Text as="i" position="absolute" bottom="0" right="0" color="whiteAlpha.900" fontSize={{ base: "xs", sm: "xx-small" }}>Image by Richard Kidger via <a href="https://unsplash.com/photos/V4S9FZmvYvM" target="_blank" rel="noreferrer">https://unsplash.com/photos/V4S9FZmvYvM</a> Copyright Free</Text>
           </Box>
         </Box>
         <Box display="flex" alignItems="center" justifyContent="center" w="100%" h="100%" bg="#365f85" p="10">

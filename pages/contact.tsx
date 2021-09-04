@@ -94,7 +94,7 @@ const Contact: FC = () => {
         <Box textAlign="center" display="flex" flexDirection="column" color="whiteAlpha.900">
           <Text fontSize="2xl">Hey!</Text>
           <Text fontSize="lg" pt="10" maxW="75vw">
-            Thanks for showing interest. Whether it's a suggestion of how to make the site better or otherwise I would be more than happy to hear from you!
+            Thanks for showing interest. Whether it&apos;s a suggestion of how to make the site better or otherwise I would be more than happy to hear from you!
           </Text>
         </Box>
         <Box

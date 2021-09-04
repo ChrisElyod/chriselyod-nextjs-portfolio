@@ -83,7 +83,6 @@ const Contact: FC = () => {
       }).then((res) => {
         console.log(res);
       })
-      alert(JSON.stringify(values, null, 2));
       setSubmitting(false);      
     }
   })(FormFields);

@@ -72,8 +72,8 @@ const Contact: FC = () => {
         name: ''
       }
     },
-    handleSubmit: (values, { setSubmitting }) => {
-      fetch('/api/contact', {
+    handleSubmit: async (values, { setSubmitting }) => {
+      await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',

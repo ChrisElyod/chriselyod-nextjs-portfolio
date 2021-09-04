@@ -21,10 +21,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     html: `<div>${req.body.message} | Sent from: ${req.body.email}</div>`
   }
   transport.sendMail(mailData, function (err, info) {
-    if(err)
+    if(err) {
       console.log(err)
-    else
-      console.log(info)
+      res.status(500).send({ message: 'Error in sending mail: ' + err })
+    } else
+    res.status(200).send({ message: 'Successful' })
   })
-  res.status(200)
 }

@@ -12,7 +12,6 @@ const transport = nodemailer.createTransport({
 });
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req.body)
   const mailData = {
     to: 'sean.chris.doyle@gmail.com',
     from: process.env.email,
@@ -22,7 +21,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
   transport.sendMail(mailData, function (err, info) {
     if(err) {
-      console.log(err)
       res.status(500).send({ message: 'Error in sending mail: ' + err })
     } else
     res.status(200).send({ message: 'Successful' })

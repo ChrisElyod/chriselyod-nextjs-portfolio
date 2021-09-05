@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Box, Container, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import Image from 'next/image';
-import Link from 'next/link';
 import WorkExperience from '../src/components/WorkExperience';
 import DevelopmentProjects from '../src/components/DevelopmentProjects';
 import Education from '../src/components/Education';

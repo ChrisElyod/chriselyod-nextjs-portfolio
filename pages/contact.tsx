@@ -1,7 +1,11 @@
 import React, { FC, useState } from "react";
 import { Box, Button, FormControl, FormErrorMessage, FormLabel, Input, Text, Textarea } from "@chakra-ui/react";
-import { ErrorMessage, useFormik, Formik, Field, Form, FormikProps, withFormik } from "formik";
+import { useToast } from '@chakra-ui/toast';
+import { AiOutlineCheck } from 'react-icons/ai';
+import { Form, FormikProps, withFormik } from "formik";
 import * as Yup from 'yup';
+import { useRouter } from "next/dist/client/router";
+import CountDown from '../src/components/CountDown';
 
 interface FormValues {
   email: string,
@@ -17,22 +21,26 @@ interface FormProps {
 
 const Contact: FC = () => {
 
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const toast = useToast();
+  const router = useRouter();
+
   const FormFields = (props: (FormProps & FormikProps<FormValues>)) => {
     const { touched, errors, isSubmitting, handleChange } = props;
     return (
       <Form>
         <Box display="flex" flexDirection="column">
-          <FormControl isInvalid={errors.name && touched.name} isRequired pt="4">
+          <FormControl isInvalid={errors.name && touched.name} isRequired pt="4" isDisabled={isSubmitted}>
             <FormLabel>Name</FormLabel>
             <Input id="name" placeholder="Name" type="text" onChange={handleChange} />
             <FormErrorMessage>{errors.name}</FormErrorMessage>
           </FormControl>
-          <FormControl isInvalid={errors.email && touched.email} isRequired pt="4">
+          <FormControl isInvalid={errors.email && touched.email} isRequired pt="4" isDisabled={isSubmitted}>
             <FormLabel>Email</FormLabel>
             <Input id="email" placeholder="Email" type="text" onChange={handleChange} />
             <FormErrorMessage>{errors.email}</FormErrorMessage>
           </FormControl>
-          <FormControl isInvalid={errors.message && touched.message} isRequired pt="4">
+          <FormControl isInvalid={errors.message && touched.message} isRequired pt="4" isDisabled={isSubmitted}>
             <FormLabel>Message</FormLabel>
             <Textarea
               id="message"
@@ -46,8 +54,10 @@ const Contact: FC = () => {
             isLoading={isSubmitting}
             type="submit"
             mt="4"
+            leftIcon={isSubmitted ? <AiOutlineCheck /> : <></>}
+            isDisabled={isSubmitted}
           >
-            Submit
+            { isSubmitted ? 'Submitted' : 'Submit' }
           </Button>
         </Box>
       </Form>
@@ -80,10 +90,23 @@ const Contact: FC = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(values)
-      }).then((res) => {
-        console.log(res);
+      }).then(() => {
+        setIsSubmitted(true);
+        toast({
+          title: "Contact Form Submitted",
+          description: <Box display="flex">Thank you for your interest! Redirecting in&nbsp;<CountDown timer={3} />...</Box>,
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+          variant: "top-accent"
+        })
+      }).catch(error => {
+        console.log(error);
       })
-      setSubmitting(false);      
+      setSubmitting(false);
+      setTimeout(() => {
+        router.push('/');
+      }, 3000);
     }
   })(FormFields);
 

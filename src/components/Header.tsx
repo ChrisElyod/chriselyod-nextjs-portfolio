@@ -1,7 +1,19 @@
-import { Box, Text } from '@chakra-ui/react';
 import React, { FC, useEffect, useState } from 'react';
-import { Link as ChakraLink } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  Icon,
+  Link as ChakraLink,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton
+} from '@chakra-ui/react';
+import { AiOutlineGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
+import { GITHUB_URL, LINKEDIN_URL } from '../constants';
 
 const Header: FC = () => {
   const [scrollHeight, setScrollHeight] = useState<number>(0);
@@ -16,7 +28,6 @@ const Header: FC = () => {
         w="container"
         bg='transparent'
         boxShadow={scrollHeight > 0 ? "xl" : ''}
-        mx="15"
         px={{ base: '10', sm: '20', md: '28', lg: '34', xl: '40' }}
         transition="750ms"
         display="flex"
@@ -24,7 +35,35 @@ const Header: FC = () => {
         alignItems="center"
       >
         <Link href="/" ><Text fontWeight="bold" fontSize={{ sm: 'xs', md: 'sm', xl: '2xl' }} cursor="pointer" color={scrollHeight === 0 ? 'white' : 'black'} passHref>CHRIS DOYLE</Text></Link>
-        <Link href="/contact"><Text ml="auto" color={scrollHeight === 0 ? 'white' : 'black'} cursor="pointer" fontSize={{ sm: 'xs', md: 'md', lg: 'xl' }} passHref>Contact Me</Text></Link>
+        <Box ml="auto" display={{ base: "none", sm: "none", md: "none", lg: "flex" }}>
+          <ChakraLink href={GITHUB_URL} isExternal mx="2"><Icon color={scrollHeight > 0 ? "blackAlpha.900" : "whiteAlpha.900"} aria-label="GitHub Account" as={AiOutlineGithub} h={8} w={8} /></ChakraLink>
+          <ChakraLink href={LINKEDIN_URL} isExternal mx="2"><Icon color={scrollHeight > 0 ? "blackAlpha.900" : "whiteAlpha.900"} aria-label="LinkedIn Account" as={AiFillLinkedin} h={8} w={8} /></ChakraLink>
+          <Link href="/contact"><Text ml="2" color={scrollHeight === 0 ? 'white' : 'black'} cursor="pointer" fontSize={{ sm: 'xs', md: 'md', lg: 'xl' }} passHref>Contact Me</Text></Link>
+        </Box>
+        <Box ml="auto"  display={{ base: "initial", lg: "none" }}>
+          <Menu autoSelect={false}>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<Icon as={GiHamburgerMenu} w={5} h={5}/>}
+              color={scrollHeight > 0 ? "blackAlpha.900" : "whiteAlpha.900"}
+              variant="ghost"
+            />
+            <MenuList>
+              <MenuItem icon={<Icon as={AiOutlineGithub} w={6} h={6}/>} as={ChakraLink} href={GITHUB_URL} isExternal>
+                GitHub
+              </MenuItem>
+              <MenuItem icon={<Icon as={AiFillLinkedin} w={6} h={6}/>} as={ChakraLink} href={LINKEDIN_URL} isExternal>
+                LinkedIn
+              </MenuItem>
+              <Link href="/contact">
+                <MenuItem icon={<Icon as={AiFillMail} w={6} h={6} />}>
+                  Contact Me
+                </MenuItem>
+              </Link>
+            </MenuList>
+          </Menu>
+        </Box>
       </Box>
     </nav>
   )

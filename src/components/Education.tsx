@@ -4,7 +4,7 @@ import { Box, Container, Text } from '@chakra-ui/layout';
 const Education: FC = () => {
   return (
     <Box minw="100vw" bg="#eaeaea">
-      <Container py="20" minW="60vw">
+      <Container py="20" minW="75vw">
         <Text fontSize="3xl" mb="4">Education</Text>
         <Box display="flex" justifyContent="space-between" py="8">
           <Box>

@@ -57,12 +57,13 @@ const DevelopmentProjects: FC = () => {
 
   const personalProjects: Array<ProjectObj> = [
     {
-      description: 'The website you\'re viewing right now! Portfolio website to accompany my resume. First project with front-end written entirely in TypeScript.',
+      description: 'The website you\'re viewing right now! Portfolio website to accompany my resume. First project with front-end written in TypeScript.',
       frameworks: ['Next.JS', 'Chakra UI'],
       languages: ['TypeScript'],
       notes: [
         'Built using Next.js as the development framework to utilize the integrated Server Side Rendering and Static Site generation features',
         'Currently static content within each .tsx component with plans to migrate to a NoSQL database and static site generation for static data',
+        'ChakraUI used as the Front End component / theming library, following provided recommendations for a mobile first design'
       ],
       repo: {
         url: 'https://github.com/ChrisElyod/chriselyod-nextjs-portfolio',
@@ -71,10 +72,10 @@ const DevelopmentProjects: FC = () => {
       name: 'CV / Portfolio',
     },
     {
-      description: 'Application to ingest audio data and transform the audio stream into a viewable tab geared towards guitar and bass.',
+      description: 'Application to ingest audio data and transform it into a viewable tab geared towards guitar and bass.',
       notes: [
         'Use Electron to build cross-platform support',
-        'Use Node Addon API to integrate popular Audio I/O Stream libraries from C, C# or C++ in NodeJS',
+        'Use Node Addon API to integrate popular Audio I/O Stream libraries from C or C++ in NodeJS',
         'Allow for live recording/saving of audio and generated tabs'
       ],
       name: 'TabChart (WIP)',

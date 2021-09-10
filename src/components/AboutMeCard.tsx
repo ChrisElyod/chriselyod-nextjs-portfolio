@@ -7,11 +7,13 @@ const AboutMeCard:FC = () => {
   return (
     <Box
       display="flex"
-      flexDirection={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}
+      flexDirection={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
       justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'space-between' }}
       alignItems="center"
     >
-      <Image src="/images/ChrisDoyle.png" width="400px" height="400px" />
+      <Box w={{ base: 40, md: 80 }}>
+        <Image src="/images/ChrisDoyle.png" width="416px" height="614px" />
+      </Box>
       <Box
         maxW={{ base: '75vw', sm: '75vw', md: '65vw', lg: '30vw' }}
         ml={{ sm: "0", md: "20" }}
@@ -22,12 +24,15 @@ const AboutMeCard:FC = () => {
         display="flex"
         flexDirection="column"
       >
-        
         <Text fontWeight="semibold" fontSize="2xl">A little about me...</Text>
         <List mt="2">
           <ListItem>
             <ListIcon as={MdChevronRight}/>
-            I&apos;ve developed projects at different scales, from company-wide systems to small-scale access tracking systems on bare metal
+            I&apos;ve developed projects at different scales,from company-wide systems to small-scale access tracking systems on bare metal
+          </ListItem>
+          <ListItem>
+            <ListIcon as={MdChevronRight}/>
+            I&apos;m prodominantly worked as a NodeJS developer, having developed fullstack projects entirely on the Node runtime, though also have exposure to Python, Java and C/C#/C++
           </ListItem>
           <ListItem>
             <ListIcon as={MdChevronRight}/>

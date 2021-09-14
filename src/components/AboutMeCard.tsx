@@ -32,11 +32,7 @@ const AboutMeCard:FC = () => {
           </ListItem>
           <ListItem>
             <ListIcon as={MdChevronRight}/>
-            I&apos;m prodominantly worked as a NodeJS developer, having developed fullstack projects entirely on the Node runtime, though also have exposure to Python, Java and C/C#/C++
-          </ListItem>
-          <ListItem>
-            <ListIcon as={MdChevronRight}/>
-            Moving forward, I&apos;m most intrigued by exploring the NodeJS stack as micro-services and micro frontends
+            I have prodominantly worked as a NodeJS developer, having developed fullstack projects entirely on the Node runtime, though also have exposure to Python, Java and C#
           </ListItem>
         </List>
         <Text color="whiteAlpha.900" mt="2" flexGrow={1} display="flex" alignItems="flex-end">Thanks for taking the time to take a look at my portfolio!</Text>

@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               <Text fontSize="2xl" fontWeight="semibold" py={{ sm: '0', md: '2', lg: '4', xl: "10"}}>
                 I&apos;m Chris Doyle
               </Text>
-              <Text display={{ base: 'none', md: 'initial' }}>A Software Developer specializing in ReactJS development with a growing passion for UI/UX Design</Text>
+              <Text display={{ base: 'none', md: 'initial' }}>A Full Stack Developer with a growing passion for UI/UX Design</Text>
             </Text>
             <Text as="i" position="absolute" bottom="0" right="0" color="whiteAlpha.900" fontSize={{ base: "xs", sm: "xx-small" }}>Image by Richard Kidger via <a href="https://unsplash.com/photos/V4S9FZmvYvM" target="_blank" rel="noreferrer">https://unsplash.com/photos/V4S9FZmvYvM</a> Copyright Free</Text>
           </Box>

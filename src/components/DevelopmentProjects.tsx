@@ -70,16 +70,7 @@ const DevelopmentProjects: FC = () => {
         name: 'chriselyod-nexjs-portfolio'
       },
       name: 'CV / Portfolio',
-    },
-    {
-      description: 'Application to ingest audio data and transform it into a viewable tab geared towards guitar and bass.',
-      notes: [
-        'Use Electron to build cross-platform support',
-        'Use Node Addon API to integrate popular Audio I/O Stream libraries from C or C++ in NodeJS',
-        'Allow for live recording/saving of audio and generated tabs'
-      ],
-      name: 'TabChart (WIP)',
-    },
+    }
   ];
   return (
     <Box minw="100vw">

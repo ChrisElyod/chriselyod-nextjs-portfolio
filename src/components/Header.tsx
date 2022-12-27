@@ -10,7 +10,7 @@ import {
   MenuItem,
   IconButton
 } from '@chakra-ui/react';
-import { AiOutlineGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
+import { AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
 import { GITHUB_URL, LINKEDIN_URL } from '../constants';
@@ -34,11 +34,10 @@ const Header: FC = () => {
         flexDirection="row"
         alignItems="center"
       >
-        <Link href="/" ><Text fontWeight="bold" fontSize={{ sm: 'xs', md: 'sm', xl: '2xl' }} cursor="pointer" color={scrollHeight === 0 ? 'white' : 'black'} passHref>CHRIS DOYLE</Text></Link>
+        <Link href="/" ><Text fontWeight="bold" fontSize={{ sm: 'xs', md: 'sm', xl: '2xl' }} cursor="pointer" color={scrollHeight === 0 ? 'white' : 'black'} passhref="true">CHRIS DOYLE</Text></Link>
         <Box ml="auto" display={{ base: "none", sm: "none", md: "none", lg: "flex" }}>
           <ChakraLink href={GITHUB_URL} isExternal mx="2"><Icon color={scrollHeight > 0 ? "blackAlpha.900" : "whiteAlpha.900"} aria-label="GitHub Account" as={AiOutlineGithub} h={8} w={8} /></ChakraLink>
           <ChakraLink href={LINKEDIN_URL} isExternal mx="2"><Icon color={scrollHeight > 0 ? "blackAlpha.900" : "whiteAlpha.900"} aria-label="LinkedIn Account" as={AiFillLinkedin} h={8} w={8} /></ChakraLink>
-          <Link href="/contact"><Text ml="2" color={scrollHeight === 0 ? 'white' : 'black'} cursor="pointer" fontSize={{ sm: 'xs', md: 'md', lg: 'xl' }} passHref>Contact Me</Text></Link>
         </Box>
         <Box ml="auto"  display={{ base: "initial", lg: "none" }}>
           <Menu autoSelect={false}>
@@ -56,11 +55,6 @@ const Header: FC = () => {
               <MenuItem icon={<Icon as={AiFillLinkedin} w={6} h={6}/>} as={ChakraLink} href={LINKEDIN_URL} isExternal>
                 LinkedIn
               </MenuItem>
-              <Link href="/contact">
-                <MenuItem icon={<Icon as={AiFillMail} w={6} h={6} />}>
-                  Contact Me
-                </MenuItem>
-              </Link>
             </MenuList>
           </Menu>
         </Box>
